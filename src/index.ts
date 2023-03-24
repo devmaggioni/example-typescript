@@ -82,60 +82,64 @@ console.log(euLindo)
 function example(a: number, b?: number): number {
    return (b && a + b) || a
 }
-         console.log(example(2, 2))
+console.log(example(2, 2))
 
 // interfaces
 interface IMathFunctionParams {
-   n1: number,
+   n1: number
    n2: number
 }
 
-function sumNumbers(nums: IMathFunctionParams):void {
+function sumNumbers(nums: IMathFunctionParams): void {
    let { n1, n2 } = nums
-   console.log(n1+n2)
+   console.log(n1 + n2)
 }
 
-function multiplyNumbers(nums: IMathFunctionParams):void {
+function multiplyNumbers(nums: IMathFunctionParams): void {
    let { n1, n2 } = nums
-console.log(n1*n2)
+   console.log(n1 * n2)
 }
 
-sumNumbers({n1: 10, n2: 15})
-multiplyNumbers({n1: 10, n2: 15})
+sumNumbers({ n1: 10, n2: 15 })
+multiplyNumbers({ n1: 10, n2: 15 })
 
 // naworring
-function doSomething(info: number | boolean):string {
-   return typeof info === "number" && `O valor passado na função doSomething foi
-   ${info}` || "Não foi passado um número"
+function doSomething(info: number | boolean): string {
+   return (
+      (typeof info === 'number' &&
+         `O valor passado na função doSomething foi
+   ${info}`) ||
+      'Não foi passado um número'
+   )
 }
 
 console.log(doSomething(25))
 
 // generics
-function showArrayItems<T>(arr: T[]):void {
-   arr.forEach((item, indice)=>{
+function showArrayItems<T>(arr: T[]): void {
+   arr.forEach((item, indice) => {
       console.log(item)
    })
 }
-showArrayItems([1,2,3,4,5])
+showArrayItems([1, 2, 3, 4, 5])
 
 class User {
-   name;
-   rule;
-   isApproved;
-   
-   constructor(name:string, rule: string, isApproved: boolean){
-      this.name = name;
-      this.rule = rule;
+   name
+   rule
+   isApproved
+
+   constructor(name: string, rule: string, isApproved: boolean) {
+      this.name = name
+      this.rule = rule
       this.isApproved = isApproved
    }
-   
-   showUserName():void {
+
+   showUserName(): void {
       console.log(`o nome do usuário é ${this.name}`)
    }
 }
 
-const gab = new User("Gabriel", "admin", true)
+const gab = new User('Gabriel', 'admin', true)
 console.log(gab)
 gab.showUserName()
 
@@ -146,31 +150,30 @@ interface IVehicle {
 }
 
 class Car implements IVehicle {
-   brand;
-   wheels;
-   
-   constructor(brand: string, wheels: number){
-      this.brand = brand;
-      this.wheels = wheels;
+   brand
+   wheels
+
+   constructor(brand: string, wheels: number) {
+      this.brand = brand
+      this.wheels = wheels
    }
-   
+
    showBrand(): void {
       console.log(`O número de rodas do carro ${this.brand} é ${this.wheels}`)
    }
-   
 }
 
-const toyota = new Car("Toyota", 4)
+const toyota = new Car('Toyota', 4)
 toyota.showBrand()
 
 // herança
 class SuperCar extends Car {
-   engine;
-   constructor(brand: string, wheels: number, engine: number){
+   engine
+   constructor(brand: string, wheels: number, engine: number) {
       super(brand, wheels)
-      this.engine = engine;
+      this.engine = engine
    }
 }
 
-const a4 = new SuperCar("Audi", 4, 2.0)
+const a4 = new SuperCar('Audi', 4, 2.0)
 console.log(a4)
