@@ -1,0 +1,25 @@
+{
+   "type": "module",
+   "name": "ts",
+   "version": "1.0.0",
+   "description": "",
+   "main": "index.js",
+   "scripts": {
+      "start": "tsc && node build && node ./dist/js/index",
+      "build": "tsc && node build",
+      "watch": "tsc -w",
+      "prettier": "npx prettier --write .",
+     "first-commit": "rm -rf .git && git init && git add . && git commit -m first-commit && git branch -M main && git remote add origin git@github.com:devmaggioni/example-typescript.git &&  git push -u origin main",
+      "commit": "git add . && git commit -m fix && git push -u origin main"
+   },
+   "keywords": [],
+   "author": "",
+   "license": "ISC",
+   "dependencies": {
+      "fs": "^0.0.1-security"
+   },
+   "devDependencies": {
+      "@types/node": "^18.15.5",
+      "uglify-js": "^3.17.4"
+   }
+}
